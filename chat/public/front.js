@@ -32,9 +32,9 @@ function addMsj() {
         },
         text: document.getElementById("textoo").value,
 
-
     }
     
+
     socket.emit('new-message', message)
 
     

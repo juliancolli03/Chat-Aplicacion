@@ -17,7 +17,7 @@ const app = express()
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 const advancedOptions = {useNewUrlParser: true, useUnifiedTopology:true}
-
+let userName;
 app.set('views', './views')
 app.set('view engine', 'ejs')
 app.use(cookieParser())
@@ -30,7 +30,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   rolling: true,
-  cookie: {maxAge: 60000}
+  cookie: {maxAge: 600000}
 }))
 app.use(passport.initialize())
 app.use(passport.session())
@@ -43,17 +43,17 @@ app.use("/registrarse", registrarse);
 app.use("/salirse", salirse);
 app.get('/chat', async (req, res) => {
   let usuario = req.user.name
+  userName=usuario
   if (usuario === null || usuario === undefined) {
       return res.redirect("/ingresar")
   }
   res.render('inicio', {chat,usuario} )
 })
 
-app.get('*', function (req, res) {
-  return res.redirect("/ingresar")
+// app.get('*', function (req, res) {
+//   return res.redirect("/ingresar")
 
-})
-
+// })
 
 
 
@@ -83,7 +83,7 @@ io.on('connection', async socket =>{
         return await chat.addChat({...data, id: 1,fecha:new Date().toLocaleString()
         })
       }
-      await chat.addChat({...data, id: listaMensajes.length +1, fecha: new Date().toLocaleString(),
+      await chat.addChat({...data, id: listaMensajes.length +1, fecha: new Date().toLocaleString()
       })
   
     
@@ -101,5 +101,4 @@ const PORT = 8080
 httpServer.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`)
 })
-
 
