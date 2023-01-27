@@ -1,5 +1,6 @@
 # Chat-Aplicacion
 ## Para ejecturarla, en la consola de node ejecuta estos comandos: 
+### cd chat
 ### `npm init -y`
 ### `node server.js`
 
