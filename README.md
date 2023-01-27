@@ -1,7 +1,7 @@
 # Chat-Aplicacion
 ## Para ejecturarla, en la consola de node ejecuta estos comandos: 
-### cd chat
-### `npm init -y`
+### `cd chat`
+### `npm i`
 ### `node server.js`
 
 La idea de esta aplicacion, fue hacer un chat con un inicio de sesion, usando passport. 
