@@ -7,10 +7,10 @@
 ## Ubicarte donde tenes la carpeta de base de datos de mongo, en mi caso seria: cd Desktop 
 ### Despues escribir: `mongod --dbpath ./carpetaDondeTenesLaDBMongo`
 ## Abrir otro cmd y escribir mongosh
-## Escribir dentro del CMD que se abrio al final show dbs, use usersname
+## Escribir dentro del CMD que se abrio al final show dbs, use usersnames
 
 La idea de esta aplicacion, fue hacer un chat con un inicio de sesion, usando passport. 
-Se utilizó Mongo DB para el guardado de mensajes, y mongo Atlas para el guardado de sesiones.
+Se utilizó Mongo DB para el guardado de mensajes, y mongo Atlas para el guardado de sesiones.Cuando hay mas de 15 mensajes, automaticamente se borran del front y de la base de datos
 Tambien se utilizo el motor de plantillas de EJS para el Front-end.
 
 Para los estilos, se utilizo Bootstrap y un poco de CSS.
