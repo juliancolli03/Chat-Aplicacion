@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const modelsChat = require("../models/modelsChat")
 mongoose.set('strictQuery', false);
-mongoose.connect("mongodb://localhost:27017/usuario", {
+mongoose.connect("mongodb://localhost:27017/usersnames", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, (err) => {

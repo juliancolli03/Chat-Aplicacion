@@ -3,11 +3,10 @@ const mongoose = require('mongoose');
 const collectionChat = "mensajes"
 
 const schemaChat = new mongoose.Schema({
-    autor:
-        {
-            id: String,
-            email: String,
-        },
+    
+        
+    id: String,
+    username: String,
     text: String,
     fecha: String,
     id:Number
