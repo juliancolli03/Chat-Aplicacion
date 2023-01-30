@@ -12,7 +12,7 @@ mongoose.connect("mongodb://localhost:27017/usersnames", {
 class Container {
     
     async getChat(){
-        const data = await modelsChat.find({}, {_id:0, __v:0})
+        const data = await modelsChat.find()
         return data
     }
 
@@ -20,6 +20,10 @@ class Container {
         const dataAdd = new modelsChat(data)
         const add = await dataAdd.save()
         return add
+    }
+    async borrarChat(){
+        const chatsAnteriores=modelsChat.deleteMany({})
+        return chatsAnteriores
     }
 }
 

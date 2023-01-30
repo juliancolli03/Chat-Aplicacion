@@ -66,6 +66,9 @@ io.on('connection', async socket =>{
         return await chat.addChat({...data, id: 1,fecha:new Date().toLocaleString(),username
         })
       }
+      if(listaMensajes.length>15){
+        return await chat.borrarChat()
+      }
       await chat.addChat({...data, id: listaMensajes.length +1, fecha: new Date().toLocaleString(),username
       })
   
