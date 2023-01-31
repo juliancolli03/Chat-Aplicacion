@@ -48,10 +48,10 @@ app.get('/chat', async (req, res) => {
   res.render('inicio', {chat,usuario} )
 })
 
-app.get('*', function (req, res) {
-  return res.redirect("/ingresar")
+// app.get('*', function (req, res) {
+//   return res.redirect("/ingresar")
 
-})
+// })
 
 
 
@@ -75,6 +75,7 @@ io.on('connection', async socket =>{
     
       io.sockets.emit('menssages', listaMensajes)
     })
+    
   })
 
 
