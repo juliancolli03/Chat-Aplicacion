@@ -2,16 +2,16 @@
 <br>
 
 <h1 style="color:blue;">Conta algo!</h1>
+<br>
 
-
-<form onsubmit="return addMsj()" >
+<form id="formulario">
   <div class="form-group d-flex">
-    <input style="    border-radius: 20px;
+    <input style="    border-radius: 20px; box-shadow: 0px 0px 30px 5px gray;
     " type="text"class="form-control col-md-6" id="textoo" placeholder="Cuéntanos algo..." required  > <br>
     <button style="
     margin-left: 10px;
     border-radius: 10px;
-" class="btn btn-primary" >Enviar Mensaje</button>
+" class="btn btn-primary" onclick="return addMsj()" >Enviar Mensaje</button>
     </div>
   </form>
 

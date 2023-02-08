@@ -3,6 +3,7 @@ const session = require('express-session')
 const cookieParser = require("cookie-parser")
 const MongoStore = require("connect-mongo")
 const {ingresar,salirse,registrarse} = require("./routers/rutaingresar")
+// const {googleIngresar} = require("./routers/ingresargoogle")
 // const salir = require("./routers/rutasalir")
 // const registrarse = require("./routers/rutaregistro")
 const { Server: HttpServer } = require('http')
@@ -35,7 +36,7 @@ app.use(passport.session())
 app.use(express.static("public"))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-
+// app.use("/ingresargoogle",googleIngresar)
 app.use('/ingresar', ingresar)
 app.use("/registrarse", registrarse);
 app.use("/salirse", salirse);
@@ -73,7 +74,7 @@ io.on('connection', async socket =>{
       })
   
     
-      io.sockets.emit('menssages', listaMensajes)
+      io.sockets.emit('menssages', await chat.getChat())
     })
     
   })

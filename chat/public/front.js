@@ -19,7 +19,9 @@ function addMsj() {
     const message = {
         text: document.getElementById("textoo").value,
     }
+    let inputLimpiar= document.getElementById("textoo")
+    inputLimpiar.value=""
     socket.emit('new-message', message)
 
-    return     
+    return false
 }
